@@ -16,9 +16,11 @@ public:
 private:
     int num, den;
 };
+
 int main()
 {
-    Ratio x, y, z(5, 9);
+    Ratio x, y, z(5, 8);
+
     x = y = z;
 
     return 0;
