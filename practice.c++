@@ -3,28 +3,27 @@ using namespace std;
 
 class Ratio
 {
-    friend float ToFloat(Ratio);
-
 public:
-    Ratio(int a, int b) : num(a), den(b), r(float(a) / b) {};
-    ~Ratio() {};
-    float ToRatio() { return r; };
+    Ratio(int a = 0, int b = 1) : num(a), den(b), r(float(a) / b) {};
+    void operator=(const Ratio &);
 
 private:
     int num, den;
     float r;
 };
 
-float ToFloat(Ratio z)
+void Ratio::operator=(const Ratio &r)
 {
-    return z.r;
+    num = r.num;
+    den = r.den;
 }
 
 int main()
 {
     Ratio x(3, 7);
-    cout << "3/7= " << x.ToRatio() << endl;
-    cout << "3/7= " << ToFloat(x) << endl;
+    Ratio y(x);
+    Ratio z;
+    z = y;
 
     return 0;
 }
