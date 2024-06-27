@@ -19,7 +19,10 @@ public:
         den = b;
     }
 
-    void Print() const { cout << num << " / " << den; }
+    void Print()
+    {
+        cout << num << " / " << den;
+    }
 
     Ratio &operator=(const Ratio &r)
     {
@@ -47,13 +50,13 @@ int main()
 {
     Ratio a(3, 7), b(-5, 3), c;
 
-    c = a * b;
+    c = a * b; // c = -15/21
 
     c.Print();
 
-    c = c * a;
-
     cout << endl;
+
+    c = c * a; // c *= a
 
     c.Print();
 
