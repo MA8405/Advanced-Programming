@@ -5,12 +5,9 @@ class Ratio
     friend float ToFloat(Ratio);
 
 public:
-    Ratio(int a, int b) : num(a), den(b), r(float(a) / b)
-    {
-        cout << "An object born.\n";
-    }
+    Ratio(int a, int b) : num(a), den(b), r(float(a) / b) {}
 
-    ~Ratio() { cout << "An object die.\n"; }
+    ~Ratio() {}
 
     float ToRatio() { return (r); }
 
