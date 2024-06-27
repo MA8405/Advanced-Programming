@@ -4,6 +4,8 @@ using namespace std;
 class Ratio
 {
 public:
+    Ratio(int a = 0, int b = 1) : num(a), den(b) {};
+
     Ratio &operator=(const Ratio &r)
     {
         num = r.num;
@@ -12,8 +14,6 @@ public:
 
         return (*this);
     }
-
-    Ratio(int a = 0, int b = 1) : num(a), den(b) {};
 
 private:
     int num, den;
