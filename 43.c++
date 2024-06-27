@@ -1,3 +1,5 @@
+// مثال تابع دوست
+
 #include <iostream>
 using namespace std;
 class Ratio
