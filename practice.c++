@@ -23,5 +23,6 @@ int main()
     Ratio y(x);
     Ratio z;
     z = y;
+
     return 0;
 }
