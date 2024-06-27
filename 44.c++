@@ -1,3 +1,5 @@
+// بارگزاری عملگر = برای کلاس ریشیو
+
 #include <iostream>
 using namespace std;
 
