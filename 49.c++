@@ -7,6 +7,8 @@ class Ratio
 public:
     Ratio(int a, int b) : num(a), den(b) {};
 
+    ~Ratio() {};
+
     void Print()
     {
         cout << num << "/" << den << endl;
