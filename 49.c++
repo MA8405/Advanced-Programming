@@ -12,7 +12,7 @@ public:
         cout << num << "/" << den << endl;
     }
 
-    Ratio &operator++() // Prefix form
+    Ratio &operator++() // Prefix form ++x
     {
         num = num + den;
 
@@ -21,7 +21,7 @@ public:
         return (*this);
     }
 
-    Ratio &operator++(int) // Postfix form
+    Ratio &operator++(int) // Postfix form x++
     {
         num = num + den;
 
