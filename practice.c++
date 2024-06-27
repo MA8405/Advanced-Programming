@@ -5,27 +5,24 @@ class Ratio
 {
 public:
     Ratio(int a = 0, int b = 1) : num(a), den(b) {};
-
-    ~Ratio() {};
-
-    void operator=(const Ratio &);
+    Ratio &operator=(const Ratio &r)
+    {
+        num = r.num;
+        den = r.den;
+        return (*this);
+    }
 
 private:
     int num, den;
 };
 
-void Ratio::operator=(const Ratio &r)
-{
-    num = r.num;
-    den = r.den;
-}
-
 int main()
 {
-    Ratio x(4, 3);
-    Ratio y(x);
-    Ratio z;
-    z = y;
+    Ratio x;
+    Ratio y;
+    Ratio z(3, 4);
+
+    x = y = z;
 
     return 0;
 }
