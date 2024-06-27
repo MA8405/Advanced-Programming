@@ -4,46 +4,28 @@ using namespace std;
 class Ratio
 {
 public:
-    Ratio(int a, int b) : num(a), den(b) {};
+    Ratio(int a = 0, int b = 1) : num(a), den(b) {};
 
-    void Print()
-    {
-        cout << num << "/" << den << endl;
-    }
+    ~Ratio() {};
 
-    Ratio &operator++()
-    {
-        num = num + den;
-
-        den = den;
-
-        return *this;
-    }
-
-    Ratio &operator++(int)
-    {
-        num = num + den;
-
-        den = den;
-
-        return *this;
-    }
+    void operator=(const Ratio &);
 
 private:
     int num, den;
 };
 
+void Ratio::operator=(const Ratio &r)
+{
+    num = r.num;
+    den = r.den;
+}
+
 int main()
 {
-    Ratio x(2, 3), y(5, 4);
-
-    x++;
-
-    x.Print();
-
-    ++y;
-
-    y.Print();
+    Ratio x(4, 3);
+    Ratio y(x);
+    Ratio z;
+    z = y;
 
     return 0;
 }
