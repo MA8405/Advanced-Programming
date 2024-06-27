@@ -16,6 +16,7 @@ public:
         y = b;
         z = c;
     }
+
     void Print() { cout << "(" << x << ',' << y << ',' << z << ")\n"; }
 
     float Norm()
