@@ -4,14 +4,12 @@ using namespace std;
 class Ratio
 {
 public:
-    void operator=(const Ratio &);
+    Ratio(int a = 0, int b = 1) : num(a), den(b) {};
 
-    Ratio(int a = 0, int b = 1) : num(a), den(b), r(float(a) / b) {};
+    void operator=(const Ratio &);
 
 private:
     int num, den;
-
-    float r;
 };
 
 void Ratio::operator=(const Ratio &r)
