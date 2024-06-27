@@ -1,3 +1,6 @@
+// بارگزاری مجدد عملگر = برای کلاس ریشیو
+// x = y = z
+
 #include <iostream>
 using namespace std;
 
