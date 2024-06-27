@@ -23,13 +23,13 @@ void Ratio::operator=(const Ratio &r)
 
 int main()
 {
-    Ratio x(3, 7);
+    Ratio x(3, 7); // x = 3/7 // باتوجه به سازنده
 
-    Ratio y(x);
+    Ratio y(x); // y = 3/7 // باتوجه به سازنده کپی
 
     Ratio z;
 
-    z = y;
+    z = y; // z = 3/7 // باتوجه به عملگر مساوی =
 
     return 0;
 }
