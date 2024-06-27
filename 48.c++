@@ -1,20 +1,36 @@
-// بارگزاری مجدد عملگر رابطه‌ای == برای کلاس ریشیو
+// بارگزاری مجدد عملگر رابطه‌ای ==,!=,<,>,>=,=> برای کلاس ریشیو
 
 #include <iostream>
 using namespace std;
 
 class Ratio
 {
-    friend Ratio operator*(const Ratio &x, const Ratio &);
+    friend Ratio operator*(const Ratio &x, const Ratio &y);
 
     friend int operator==(const Ratio &, const Ratio &);
 
 public:
-    Ratio(int a, int b) : num(a), den(b) {};
+    Ratio(int a = 0, int b = 1) : num(a), den(b) {};
 
-    Ratio &operator=(const Ratio &);
+    ~Ratio() {};
 
-    Ratio &operator*=(const Ratio &r);
+    Ratio &operator=(const Ratio &r)
+    {
+        num = r.num;
+
+        den = r.den;
+
+        return (*this);
+    }
+
+    Ratio &operator*=(const Ratio &r)
+    {
+        num = num * r.num;
+
+        den = den * r.den;
+
+        return (*this);
+    }
 
 private:
     int num, den;
