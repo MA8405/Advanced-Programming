@@ -5,7 +5,7 @@ using namespace std;
 
 class Ratio
 {
-    friend Ratio operator*(const Ratio &x, const Ratio &);
+    friend Ratio operator*(const Ratio &x, const Ratio &y);
 
 public:
     Ratio(int a = 0, int b = 1) : num(a), den(b) {};
