@@ -7,27 +7,27 @@ class Ratio
 public:
     Ratio(int a, int b) : num(a), den(b) {};
 
-    Ratio &operator++()
-    {
-        num = num + den;
-
-        den = den;
-
-        return (*this);
-    }
-
-    Ratio &operator++(int)
-    {
-        num = num + den;
-
-        den = den;
-
-        return (*this);
-    }
-
     void Print()
     {
         cout << num << "/" << den << endl;
+    }
+
+    Ratio &operator++() // Prefix form
+    {
+        num = num + den;
+
+        den = den;
+
+        return (*this);
+    }
+
+    Ratio &operator++(int) // Postfix form
+    {
+        num = num + den;
+
+        den = den;
+
+        return (*this);
     }
 
 private:
