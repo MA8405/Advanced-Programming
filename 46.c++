@@ -21,7 +21,7 @@ public:
 
     void Print()
     {
-        cout << num << " / " << den;
+        cout << num << " / " << den << endl;
     }
 
     Ratio &operator=(const Ratio &r)
@@ -34,9 +34,7 @@ public:
     }
 
 private:
-    int num,
-
-        den;
+    int num, den;
 };
 
 Ratio operator*(const Ratio &x, const Ratio &y)
@@ -53,8 +51,6 @@ int main()
     c = a * b; // c = -15/21
 
     c.Print();
-
-    cout << endl;
 
     c = c * a; // c *= a
 
