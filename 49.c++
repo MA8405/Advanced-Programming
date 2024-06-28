@@ -5,9 +5,15 @@ using namespace std;
 class Ratio
 {
 public:
-    Ratio(int a, int b) : num(a), den(b) {};
+    Ratio(int a = 0, int b = 1) : num(a), den(b)
+    {
+        cout << "An object born" << endl;
+    }
 
-    ~Ratio() {};
+    ~Ratio()
+    {
+        cout << "An object die" << endl;
+    }
 
     void Print()
     {
