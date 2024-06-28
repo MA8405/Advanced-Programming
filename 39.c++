@@ -8,30 +8,31 @@ using namespace std;
 class Point
 {
 public:
-    Point(float a = 0, float b = 0, float c = 0) : x(a), y(b), z(c) {}
+    Point(float a = 0, float b = 0, float c = 0) : x(a), y(b), z(c) {} // سازنده
 
-    void SetPoint(float a, float b, float c)
+    void SetPoint(float a, float b, float c) // مقدار دهی
     {
         x = a;
         y = b;
         z = c;
     }
 
-    void Print() { cout << "(" << x << ',' << y << ',' << z << ")\n"; }
+    void Print() { cout << "(" << x << ',' << y << ',' << z << ")\n"; } // چاپ
 
-    float Norm()
+    // Norm for measure length or size
+    float Norm() // اندازه
     {
         return (sqrt(x * x + y * y + z * z));
     }
 
-    void Neg()
+    void Neg() // منفی کردن
     {
         x = -x;
         y = -y;
         z = -z;
     }
 
-private:
+private: // نقاط فضای ۳ بعدی
     float x, y, z;
 };
 
