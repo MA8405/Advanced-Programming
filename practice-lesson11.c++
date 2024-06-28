@@ -3,8 +3,10 @@ using namespace std;
 
 class Ratio
 {
+    friend float ToFloat(Ratio);
+
 public:
-    Ratio(int a = 0, int b = 1) : num(a), den(b)
+    Ratio(int a = 0, int b = 1) : num(a), den(b), r(float(a) / b)
     {
         cout << "An object born" << endl;
     }
@@ -12,32 +14,26 @@ public:
     {
         cout << "An object die" << endl;
     }
-    void Print()
-    {
-        cout << num << "/" << den << endl;
-    }
-    void operator=(const Ratio &);
+
+    float ToRatio() { return r; }
 
 private:
     int num, den;
+    float r;
 };
 
-void Ratio::operator=(const Ratio &r)
+float ToFloat(Ratio z)
 {
-    num = r.num;
-    den = r.den;
+    return z.r;
 }
 
 int main()
 {
-    Ratio x(3, 2);
-    x.Print();
-    Ratio y(x);
-    y.Print();
-    Ratio z;
+    Ratio x(2, 2);
 
-    z = y;
-    z.Print();
+    cout << ToFloat(x) << endl;
+
+    cout << x.ToRatio() << endl;
 
     return 0;
 }
