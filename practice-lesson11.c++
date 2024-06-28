@@ -1,6 +1,3 @@
-// بارگزاری مجدد عملگر = برای کلاس ریشیو
-// x = y = z
-
 #include <iostream>
 using namespace std;
 
@@ -19,22 +16,28 @@ public:
     {
         cout << num << "/" << den << endl;
     }
-    Ratio &operator=(const Ratio &r)
-    {
-        num = r.num;
-        den = r.den;
-        return *this;
-    }
+    void operator=(const Ratio &);
 
 private:
     int num, den;
 };
 
+void Ratio::operator=(const Ratio &r)
+{
+    num = r.num;
+    den = r.den;
+}
+
 int main()
 {
-    Ratio x, y, z(2, 4);
-    x = y = z;
+    Ratio x(3, 2);
     x.Print();
+    Ratio y(x);
+    y.Print();
+    Ratio z;
+
+    z = y;
+    z.Print();
 
     return 0;
 }
