@@ -7,7 +7,7 @@ using namespace std;
 class Matrix
 {
 public:
-    Matrix(float a = 1, float b = 0, float c = 0, float d = 1)
+    Matrix(float a = 1, float b = 0, float c = 0, float d = 1) // سازنده
     {
         x[0][0] = a;
 
@@ -20,7 +20,7 @@ public:
         Det = a * d - b * c;
     }
 
-    void Print()
+    void Print() // چاپ
     {
         cout << "\n"
              << x[0][0] << " " << x[0][1]
@@ -29,9 +29,7 @@ public:
              << "\n";
     }
 
-    float D() { return (Det); }
-
-    void Set(float a, float b, float c, float d)
+    void Set(float a, float b, float c, float d) // مقدار دهی
     {
         x[0][0] = a;
 
@@ -44,7 +42,7 @@ public:
         Det = a * d - b * c;
     }
 
-    int HaveInverse()
+    int HaveInverse() // برسی وارون پزیری
     {
         if (Det != 0)
 
@@ -55,20 +53,7 @@ public:
             return (0);
     }
 
-    Matrix(const Matrix &y)
-    {
-        x[0][0] = y.x[0][0];
-
-        x[0][1] = y.x[0][1];
-
-        x[1][0] = y.x[1][0];
-
-        x[1][1] = y.x[1][1];
-
-        Det = y.Det;
-    }
-
-    void Inverse()
+    void Inverse() // وارون کردن
     {
         float a, b, c, d;
 
@@ -95,6 +80,21 @@ public:
         }
     }
 
+    Matrix(const Matrix &y) // سازنده کپی
+    {
+        x[0][0] = y.x[0][0];
+
+        x[0][1] = y.x[0][1];
+
+        x[1][0] = y.x[1][0];
+
+        x[1][1] = y.x[1][1];
+
+        Det = y.Det;
+    }
+
+    float D() { return (Det); } // دترمینان
+
 private:
     float x[2][2], Det;
 
@@ -111,16 +111,18 @@ int main()
     cout << "|A|= " << A.D();
 
     if (A.HaveInverse() == 1)
+    {
 
         cout << "A varon pazire";
 
-    Matrix A_1(A);
+        Matrix A_1(A);
 
-    A_1.Inverse();
+        A_1.Inverse();
 
-    A.Print();
+        A.Print();
 
-    A_1.Print();
+        A_1.Print();
+    }
 
     return 0;
 }

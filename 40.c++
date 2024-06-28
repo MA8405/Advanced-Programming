@@ -1,6 +1,9 @@
 // نقاط فضای ۳ بعدی، سازنده، مقدار دهی، چاپ، انداره، منفی کردن
 // float x,y,z
 
+// جمع دو بردار با انتخاب پوینت
+// A = B + C
+
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -32,6 +35,10 @@ public:
         z = -z;
     }
 
+    float X() { return (x); }
+    float Y() { return (y); }
+    float Z() { return (z); }
+
 private: // نقاط فضای ۳ بعدی
     float x, y, z;
 };
@@ -49,6 +56,14 @@ int main()
     P3.Neg();
 
     P3.Print();
+
+    // A = B + C
+
+    Point A, B(1.0, 2.0, 3.0), C(-0.5, 1.0, 2.0);
+
+    A.SetPoint(B.X() + C.X(), B.Y() + C.Y(), B.Z() + C.Z());
+
+    A.Print();
 
     return 0;
 }
