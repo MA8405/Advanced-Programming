@@ -14,7 +14,7 @@ public:
     }
     ~Stack()
     {
-        delte[] s;
+        delete[] s;
     }
     int IsFull()
     {
