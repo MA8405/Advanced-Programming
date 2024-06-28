@@ -29,14 +29,14 @@ public:
         return (*this);
     }
 
-    Ratio &operator++(int) // Postfix form x++
-    {
-        num = num + den;
+    // Ratio &operator++(int) // Postfix form x++
+    // {
+    //     num = num + den;
 
-        den = den;
+    //     den = den;
 
-        return (*this);
-    }
+    //     return (*this);
+    // }
 
 private:
     int num, den;
@@ -50,9 +50,9 @@ int main()
 
     x.Print();
 
-    ++y; // y = 8/5
+    // y++; // y = 8/5 // Postfix form y++
 
-    y.Print();
+    // y.Print();
 
     return 0;
 }
