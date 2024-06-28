@@ -1,12 +1,11 @@
-// بارگزاری مجدد عملگر * برای کلاس ریشیو
+// بارگزاری مجدد عملگر = برای کلاس ریشیو
+// x = y = z
 
 #include <iostream>
 using namespace std;
 
 class Ratio
 {
-    friend Ratio operator*(const Ratio &, const Ratio &);
-
 public:
     Ratio(int a = 0, int b = 1) : num(a), den(b)
     {
@@ -16,7 +15,6 @@ public:
     {
         cout << "An object die" << endl;
     }
-
     void Print()
     {
         cout << num << "/" << den << endl;
@@ -32,17 +30,11 @@ private:
     int num, den;
 };
 
-Ratio operator*(const Ratio &x, const Ratio &y)
-{
-    Ratio z(x.num * y.num, x.den * y.den);
-    return z;
-}
-
 int main()
 {
-    Ratio a(4, 3), b(5, 6), c;
-    c = a * b;
-    c.Print();
+    Ratio x, y, z(2, 4);
+    x = y = z;
+    x.Print();
 
     return 0;
 }
