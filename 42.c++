@@ -50,10 +50,10 @@ public:
             top++;
 
             *(s + top) = k; // s[top] = K
-
-            cout << "poshte por ast";
         }
+        cout << "poshte por ast";
     }
+
     int DelS1()
     { // با فرض غیر خالی بودن پشته عنصر بالای پشته را برمیگردانیم
         top--;
@@ -76,7 +76,6 @@ public:
 
 private:
     int top, *s, MaxSize;
-
 }; // end of class Stack
 
 int main()
