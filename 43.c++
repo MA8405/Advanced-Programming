@@ -7,9 +7,15 @@ class Ratio
     friend float ToFloat(Ratio);
 
 public:
-    Ratio(int a, int b) : num(a), den(b), r(float(a) / b) {}
+    Ratio(int a = 0, int b = 1) : num(a), den(b)
+    {
+        cout << "An object born" << endl;
+    }
 
-    ~Ratio() {}
+    ~Ratio()
+    {
+        cout << "An object die" << endl;
+    }
 
     float ToRatio() { return (r); }
 
