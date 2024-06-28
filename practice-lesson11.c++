@@ -3,52 +3,43 @@ using namespace std;
 
 class Ratio
 {
-    friend Ratio operator*(const Ratio &x, const Ratio &y);
-
 public:
-    Ratio(int a = 0, int b = 1) : num(a), den(b) {};
-    ~Ratio() {};
-
-    void assign(int a, int b)
+    Ratio(int a = 0, int b = 1) : num(a), den(b)
     {
-        num = a;
-        den = b;
+        cout << "An object born" << endl;
     }
-
+    ~Ratio()
+    {
+        cout << "An object die" << endl;
+    }
     void Print()
     {
-        cout << num << " / " << den << endl;
+        cout << num << "/" << den << endl;
     }
 
-    Ratio &operator=(const Ratio &r)
+    Ratio &operator++() // Prefix
     {
-        num = r.num;
-        den = r.den;
-        return *this;
+        num = num + den;
+        den = den;
+        return (*this);
+    }
+    Ratio &operator++(int)
+    {
+        num = num + den;
+        den = den;
+        return (*this);
     }
 
 private:
     int num, den;
 };
 
-Ratio operator*(const Ratio &x, const Ratio &y)
-{
-    Ratio z(x.num * y.num, x.den * y.den);
-
-    return z;
-}
-
 int main()
 {
-    Ratio a(3, 7), b(-5, 3), c;
-
-    c = a * b;
-
-    c.Print();
-
-    c = c * a;
-
-    c.Print();
-
+    Ratio x(3, 5), y(4, 8);
+    ++x;
+    x.Print();
+    y++;
+    y.Print();
     return 0;
 }
