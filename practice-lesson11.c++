@@ -1,4 +1,5 @@
-// بارگزاری مجدد عملگر رابطه‌ای == برای کلاس ریشیو
+// بارگزاری مجدد عملگر برای کلاس ریشیو
+// *=
 
 #include <iostream>
 using namespace std;
@@ -6,7 +7,6 @@ using namespace std;
 class Ratio
 {
     friend Ratio operator*(const Ratio &, const Ratio &);
-    friend int operator==(const Ratio &, const Ratio &);
 
 public:
     Ratio(int a = 0, int b = 1) : num(a), den(b)
@@ -46,21 +46,13 @@ Ratio operator*(const Ratio &x, const Ratio &y)
     return z;
 }
 
-int operator==(const Ratio &x, const Ratio &y)
-{
-    if (x.num * y.den == x.den * y.num)
-        return 1;
-    else
-        return 0;
-}
-
 int main()
 {
-    Ratio a(3, 4), b(6, 8);
-    if (a == b)
-        cout << "Mosaviyand" << endl;
-    else
-        cout << "Na Mosaviyand" << endl;
+    Ratio a(3, 4), b(4, 3);
+    a = a * b;
+    a.Print();
+    b *= b;
+    b.Print();
 
     return 0;
 }
