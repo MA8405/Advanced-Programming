@@ -17,17 +17,18 @@ public:
     {
         cout << "An object die" << endl;
     }
+
     void Print()
     {
         cout << num << "/" << den << endl;
     }
+
     Ratio &operator=(const Ratio &r)
     {
         num = r.num;
         den = r.den;
         return *this;
     }
-
     Ratio &operator*=(const Ratio &r)
     {
         num = num * r.num;
@@ -36,7 +37,7 @@ public:
     }
 
 private:
-    int den, num;
+    int num, den;
 };
 
 Ratio operator*(const Ratio &x, const Ratio &y)
@@ -55,11 +56,11 @@ int operator==(const Ratio &x, const Ratio &y)
 
 int main()
 {
-    Ratio a(3, 7), b(7, 14);
+    Ratio a(3, 4), b(6, 8);
     if (a == b)
-        cout << "Mo" << endl;
+        cout << "Mosaviyand" << endl;
     else
-        cout << "Na" << endl;
+        cout << "Na Mosaviyand" << endl;
 
     return 0;
 }
