@@ -20,11 +20,6 @@ public:
         cout << "An object die" << endl;
     }
 
-    void Print()
-    {
-        cout << num << "/" << den << endl;
-    }
-
     Ratio &operator=(const Ratio &r)
     {
         num = r.num;
