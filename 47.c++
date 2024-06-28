@@ -1,15 +1,22 @@
-// بارگزاری مجدد عملگر *=, /=, +-, -=, ... برای کلاس ریشیو
+// بارگزاری مجدد عملگر پایین برای کلاس ریشیو
+// *=
 
 #include <iostream>
 using namespace std;
 class Ratio
 {
-    friend Ratio operator*(const Ratio &x, const Ratio &y);
+    friend Ratio operator*(const Ratio &, const Ratio &);
 
 public:
-    Ratio(int a = 0, int b = 1) : num(a), den(b) {};
+    Ratio(int a = 0, int b = 1) : num(a), den(b)
+    {
+        cout << "An object born" << endl;
+    }
 
-    ~Ratio() {};
+    ~Ratio()
+    {
+        cout << "An object die" << endl;
+    }
 
     void Print()
     {
@@ -49,11 +56,13 @@ int main()
 {
     Ratio a(3, 7), b(2, 5), c(5, 2);
 
-    a = a * b; // a = 6/35
-    a.Print();
+    a = a * b;
 
-    c *= b; // c = 10/10
-    c.Print();
+    a.Print(); // a = 6/35
+
+    c *= b;
+
+    c.Print(); // c = 10/10
 
     return 0;
 }

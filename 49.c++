@@ -1,13 +1,19 @@
-// بارگزاری مجدد عملگر رابطه‌ای ++ برای کلاس ریشیو
+// بارگزاری مجدد عملگر ++ برای کلاس ریشیو
 
 #include <iostream>
 using namespace std;
 class Ratio
 {
 public:
-    Ratio(int a, int b) : num(a), den(b) {};
+    Ratio(int a = 0, int b = 1) : num(a), den(b)
+    {
+        cout << "An object born" << endl;
+    }
 
-    ~Ratio() {};
+    ~Ratio()
+    {
+        cout << "An object die" << endl;
+    }
 
     void Print()
     {
@@ -23,14 +29,14 @@ public:
         return (*this);
     }
 
-    Ratio &operator++(int) // Postfix form x++
-    {
-        num = num + den;
+    // Ratio &operator++(int) // Postfix form x++
+    // {
+    //     num = num + den;
 
-        den = den;
+    //     den = den;
 
-        return (*this);
-    }
+    //     return (*this);
+    // }
 
 private:
     int num, den;
@@ -44,9 +50,9 @@ int main()
 
     x.Print();
 
-    ++y; // y = 8/5
+    // y++; // y = 8/5 // Postfix form y++
 
-    y.Print();
+    // y.Print();
 
     return 0;
 }

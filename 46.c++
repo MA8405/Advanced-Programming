@@ -1,27 +1,26 @@
-// بارگزاری مجدد عملگر *, /, +, -, % برای کلاس ریشیو
+// بارگزاری مجدد عملگر * برای کلاس ریشیو
 
 #include <iostream>
 using namespace std;
 
 class Ratio
 {
-    friend Ratio operator*(const Ratio &x, const Ratio &y);
+    friend Ratio operator*(const Ratio &, const Ratio &);
 
 public:
-    Ratio(int a = 0, int b = 1) : num(a), den(b) {};
-
-    ~Ratio() {};
-
-    void assign(int a, int b)
+    Ratio(int a = 0, int b = 1) : num(a), den(b)
     {
-        num = a;
+        cout << "An object born" << endl;
+    }
 
-        den = b;
+    ~Ratio()
+    {
+        cout << "An object die" << endl;
     }
 
     void Print()
     {
-        cout << num << " / " << den << endl;
+        cout << num << "/" << den << endl;
     }
 
     Ratio &operator=(const Ratio &r)
