@@ -1,5 +1,4 @@
-// بارگزاری مجدد عملگر برای کلاس ریشیو
-// *=
+// بارگزاری مجدد عملگر * برای کلاس ریشیو
 
 #include <iostream>
 using namespace std;
@@ -22,17 +21,10 @@ public:
     {
         cout << num << "/" << den << endl;
     }
-
     Ratio &operator=(const Ratio &r)
     {
         num = r.num;
         den = r.den;
-        return *this;
-    }
-    Ratio &operator*=(const Ratio &r)
-    {
-        num = num * r.num;
-        den = den * r.den;
         return *this;
     }
 
@@ -48,11 +40,9 @@ Ratio operator*(const Ratio &x, const Ratio &y)
 
 int main()
 {
-    Ratio a(3, 4), b(4, 3);
-    a = a * b;
-    a.Print();
-    b *= b;
-    b.Print();
+    Ratio a(4, 3), b(5, 6), c;
+    c = a * b;
+    c.Print();
 
     return 0;
 }
