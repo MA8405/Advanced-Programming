@@ -1,37 +1,24 @@
-// تابعی که عدد صحیح ان را به عنوان تعداد کاراکترهای پیغام گرفته و هزینه را طبق فرمول زیر محاسبه و جاپ کند (نتیجه ای به محل فراخوانی برنمیگردد)
+// تابعی که سه عدد اعشاری آ، ب، سی را بعنوان طول اضلاع مثلث گرقته و مساحت آن را طبق فرمول زیر محاسبه و به صورت عدد اعشاری برگرداند
 
-// تا 20 کاراکتر اول 100 ریال
-// باازای هر 5 کاراکتر اضافه 40 ریال اضافه شود
+// s = sqrt(m(m - a)(m - b)(m-c))
+// m = (a + b + c) / 2
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 
-void SmsCost(int n)
+float Area(float a, float b, float c)
 {
-    int s = 100;
-    if (n <= 0)
-    {
-        cout << "Error";
-        return;
-    }
-    if (n <= 20)
-    {
-        cout << "SmsCost: " << s;
-        return;
-    }
-    s = s + ((n - 20) / 5) * 40;
-    if ((n - 20) % 5 != 0)
-        s = s + 40;
-
-    cout << "SmsCost: " << s;
+    float m = (a + b + c) / 2;
+    return sqrt(m * (m - a) * (m - b) * (m - c));
 }
 
 int main()
 {
-    cout << "Enter a number: " << endl;
-    int x;
-    cin >> x;
-    SmsCost(x);
+    cout << "Enter 3 numbers: ";
+    float x, y, z;
+    cin >> x >> y >> z;
+    cout << Area(x, y, z);
 
     return 0;
 }
