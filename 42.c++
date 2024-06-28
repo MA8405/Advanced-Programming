@@ -23,7 +23,7 @@ public:
     {
         if (top == MaxSize - 1)
 
-            return 1;
+            return 1; // پشته پر است
 
         else
 
