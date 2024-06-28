@@ -1,38 +1,37 @@
-// تابعی که اطلاعات رکورد دانشجویی شامل نام، شماره دانشجویی، ۱۰ نمره در تابع خوانده و پس از محاسبه معدل، رکورد را به عنوان نتیجه تابع برگرداند
+// تابعی که عدد صحیح ان را به عنوان تعداد کاراکترهای پیغام گرفته و هزینه را طبق فرمول زیر محاسبه و جاپ کند (نتیجه ای به محل فراخوانی برنمیگردد)
+
+// تا 20 کاراکتر اول 100 ریال
+// باازای هر 5 کاراکتر اضافه 40 ریال اضافه شود
 
 #include <iostream>
 using namespace std;
 
-struct Student
+void SmsCost(int n)
 {
-    char name[50];
-    int ID;
-    float No[10], ave;
-};
+    int s = 100;
+    if (n <= 0)
+    {
+        cout << "Error";
+        return;
+    }
+    if (n <= 20)
+    {
+        cout << "SmsCost: " << s;
+        return;
+    }
+    s = s + ((n - 20) / 5) * 40;
+    if ((n - 20) % 5 != 0)
+        s = s + 40;
 
-Student Read(void);
+    cout << "SmsCost: " << s;
+}
 
 int main()
 {
-    Student Dept[100];
-    int i;
-    for (i = 0; i < 100; i++)
-        Dept[i] = Read();
+    cout << "Enter a number: " << endl;
+    int x;
+    cin >> x;
+    SmsCost(x);
 
     return 0;
-}
-
-Student Read(void)
-{
-    Student x;
-    int i;
-    float sum = 0;
-    cin >> x.name >> x.ID;
-    for (i = 0; i < 10; i++)
-    {
-        cin >> x.No[i];
-        sum = sum + x.No[i];
-    }
-    x.ave = sum / 10;
-    return x;
 }
