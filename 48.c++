@@ -1,4 +1,4 @@
-// بارگزاری مجدد عملگر رابطه‌ای ==,!=,<,>,>=,=> برای کلاس ریشیو
+// بارگزاری مجدد عملگر رابطه‌ای == برای کلاس ریشیو
 
 #include <iostream>
 using namespace std;
@@ -47,6 +47,13 @@ private:
     int num, den;
 };
 
+Ratio operator*(const Ratio &x, const Ratio &y)
+{
+    Ratio z(x.num * y.num, x.den * y.den);
+
+    return (z);
+}
+
 int operator==(const Ratio &x, const Ratio &y)
 {
     if (x.num * y.den == x.den * y.num)
@@ -64,11 +71,11 @@ int main()
 
     if (a == b)
 
-        cout << "Mosaviyand";
+        cout << "Mosaviyand" << endl;
 
     else
 
-        cout << "Na Mosaviyand";
+        cout << "Na Mosaviyand" << endl;
 
     return 0;
 }
