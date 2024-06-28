@@ -7,7 +7,20 @@ using namespace std;
 class Ratio
 {
 public:
-    Ratio(int a = 0, int b = 1) : num(a), den(b) {};
+    Ratio(int a = 0, int b = 1) : num(a), den(b)
+    {
+        cout << "An object born" << endl;
+    }
+
+    ~Ratio()
+    {
+        cout << "An object die" << endl;
+    }
+
+    void Print()
+    {
+        cout << num << "/" << den << endl;
+    }
 
     Ratio &operator=(const Ratio &r)
     {
@@ -27,6 +40,8 @@ int main()
     Ratio x, y, z(5, 9);
 
     x = y = z;
+
+    x.Print();
 
     return 0;
 }
