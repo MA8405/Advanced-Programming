@@ -51,7 +51,7 @@ public:
 
             *(s + top) = k; // s[top] = K
         }
-        cout << "poshte por ast";
+        cout << "poshte por ast" << endl;
     }
 
     int DelS1()
@@ -86,7 +86,7 @@ int main()
 
     if (A.IsEmpty() == 0)
 
-        cout << A.DelS1();
+        cout << A.DelS1() << endl;
 
     B.AddS(23);
 
@@ -114,7 +114,7 @@ int main()
 
     if (B.DelS2(&k) == 1)
 
-        cout << k;
+        cout << k << endl;
 
     return 0;
 }
