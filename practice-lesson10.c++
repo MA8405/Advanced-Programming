@@ -18,7 +18,7 @@ public:
     }
     int IsFull()
     {
-        if (top == MaxSzie - 1)
+        if (top == MaxSize - 1)
             return 1;
         else
             return 0;
@@ -40,6 +40,7 @@ public:
         }
         cout << "Poshte por ast";
     }
+
     int DelS1()
     {
         top--;
