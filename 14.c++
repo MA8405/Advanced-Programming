@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-void swap1(int a, int b)
+void Swap1(int a, int b)
 {
     int temp = a;
 
@@ -12,7 +12,7 @@ void swap1(int a, int b)
     b = temp;
 }
 
-void swap2(int *a, int *b)
+void Swap2(int *a, int *b)
 {
     int temp = *a;
 
@@ -21,7 +21,7 @@ void swap2(int *a, int *b)
     *b = temp;
 }
 
-void swap3(int &a, int &b)
+void Swap3(int &a, int &b)
 {
     int temp = a;
 
@@ -32,16 +32,20 @@ void swap3(int &a, int &b)
 
 int main()
 {
-    int x = 7, y = 3, a = 5, b = 9, c = 4;
+    cout << "Enter 6 numbers: " << endl;
 
-    swap1(a, b);
+    int a, b, c, x, y, z;
+
+    cin >> a >> b >> x >> y >> c >> z;
+
+    Swap1(a, b);
     cout << a << " " << b << endl;
 
-    swap2(&x, &y);
+    Swap2(&x, &y);
     cout << x << " " << y << endl;
 
-    swap3(b, c);
-    cout << b << " " << c << endl;
+    Swap3(c, z);
+    cout << c << " " << z << endl;
 
     return 0;
 }
