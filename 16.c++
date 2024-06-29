@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-struct student
+struct Student
 {
     char name[20];
     int ID;
@@ -14,7 +14,7 @@ struct student
 
 int main()
 {
-    student Dept[100], *Ave[100], *temp;
+    Student Dept[100], *Ave[100], *temp;
 
     int i, j;
 
