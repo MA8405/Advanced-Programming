@@ -1,22 +1,25 @@
 #include <iostream>
 using namespace std;
 
-int fib1(int n)
+float p1(float x, int n)
 {
-    int a = 1, b = 1, c, i;
-    for (i = 3; i <= n; i++)
-    {
-        c = a + b;
-        a = b;
-        b = c;
-    }
-    return c;
-}
-
-int fib2(int n)
-{
-    if (n <= 2)
+    if (n == 0)
         return 1;
     else
-        return fib2(n - 1) + fib2(n - 2);
+        return x * p1(x, n - 1);
+}
+
+float p2(float x, int n)
+{
+    float p;
+    if (n == 0)
+        return 1;
+    else
+    {
+        p = p2(x, n / 2);
+        if (n % 2 == 0)
+            return p * p;
+        else
+            return x * p * p;
+    }
 }
