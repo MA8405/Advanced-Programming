@@ -5,38 +5,63 @@ using namespace std;
 
 #define n 100
 
-struct student
+struct Student
 {
     char name[50];
     int ID;
 };
 
-student Read(void); // takes no arguments (void) and returns a value of type student
+Student Read(void); // takes no arguments (void) and returns a value of type student
 
-void sort(student x[], int k);
+void Sort(Student x[], int k);
 
-void print(student x);
+int Min(Student x[], int l, int u);
+
+void Swap(Student *a, Student *b);
+
+void Print(Student x);
 
 int main()
 {
     int i;
 
-    student Dept[n];
+    Student Dept[n];
 
     for (i = 0; i < n; i++)
 
         Dept[i] = Read();
 
-    sort(Dept, n);
+    Sort(Dept, n);
 
     for (i = 0; i < n; i++)
 
-        print(Dept[i]);
+        Print(Dept[i]);
 
     return 0;
 }
 
-int Min(student x[], int l, int u)
+Student Read(void)
+{
+    Student x;
+
+    cin >> x.name >> x.ID;
+
+    return x;
+}
+
+void Sort(Student x[], int k)
+{
+    int i, index;
+
+    for (i = 0; i < n - 1; i++)
+    {
+        index = Min(x, i, k - 1);
+
+        Swap(&x[i], &x[index]);
+    }
+}
+
+int Min(Student x[], int l, int u)
 {
     int indexMin = l, i;
 
@@ -49,9 +74,9 @@ int Min(student x[], int l, int u)
     return (indexMin);
 }
 
-void swap(student *a, student *b)
+void Swap(Student *a, Student *b)
 {
-    student temp;
+    Student temp;
 
     temp = *a;
 
@@ -60,28 +85,7 @@ void swap(student *a, student *b)
     *b = temp;
 }
 
-student Read()
-{
-    student x;
-
-    cin >> x.name >> x.ID;
-
-    return x;
-}
-
-void print(student x)
+void Print(Student x)
 {
     cout << x.name << x.ID << "\n";
-}
-
-void sort(student x[], int k)
-{
-    int i, index;
-
-    for (i = 0; i < n - 1; i++)
-    {
-        index = Min(x, i, k - 1);
-
-        swap(&x[i], &x[index]);
-    }
 }
