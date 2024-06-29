@@ -1,4 +1,4 @@
-// فاکتوریل به روش تابع غیر بازگشتی و بازگشتی
+// فاکتوریل به روش غیر بازگشتی و بازگشتی
 
 #include <iostream>
 using namespace std;
@@ -31,9 +31,15 @@ int f2(int n)
 
 int main()
 {
-    cout << f1(3) << endl;
+    cout << "Enter a number: " << endl;
 
-    cout << f2(3) << endl;
+    int x;
+
+    cin >> x;
+
+    cout << f1(x) << endl;
+
+    cout << f2(x) << endl;
 
     return 0;
 }
