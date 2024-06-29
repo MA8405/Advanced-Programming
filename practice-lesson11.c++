@@ -1,12 +1,12 @@
+// بارگزاری مجدد عملگر ++ برای کلاس ریشیو
+
 #include <iostream>
 using namespace std;
 
 class Ratio
 {
-    friend float ToFloat(Ratio);
-
 public:
-    Ratio(int a = 0, int b = 1) : num(a), den(b), r(float(a) / b)
+    Ratio(int a = 0, int b = 1) : num(a), den(b)
     {
         cout << "An object born" << endl;
     }
@@ -14,26 +14,28 @@ public:
     {
         cout << "An object die" << endl;
     }
+    void Print()
+    {
+        cout << num << "/" << den << endl;
+    }
 
-    float ToRatio() { return r; }
+    Ratio &operator++()
+    {
+        num = num + den;
+        den = den;
+        return *this;
+        ;
+    }
 
 private:
     int num, den;
-    float r;
 };
-
-float ToFloat(Ratio z)
-{
-    return z.r;
-}
 
 int main()
 {
-    Ratio x(2, 2);
-
-    cout << ToFloat(x) << endl;
-
-    cout << x.ToRatio() << endl;
+    Ratio x(3, 2);
+    ++x;
+    x.Print();
 
     return 0;
 }
