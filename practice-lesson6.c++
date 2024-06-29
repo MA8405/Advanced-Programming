@@ -1,17 +1,22 @@
 #include <iostream>
 using namespace std;
 
-int BMM1(int a, int b)
+int fib1(int n)
 {
-    int c;
-    while(b!=0){
-        c = a;
+    int a = 1, b = 1, c, i;
+    for (i = 3; i <= n; i++)
+    {
+        c = a + b;
         a = b;
-        b = c % a;
+        b = c;
     }
-    return a;
+    return c;
 }
 
-int BMM2(int a , int b){
-    
+int fib2(int n)
+{
+    if (n <= 2)
+        return 1;
+    else
+        return fib2(n - 1) + fib2(n - 2);
 }
