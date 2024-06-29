@@ -1,20 +1,17 @@
 #include <iostream>
 using namespace std;
 
-int f1(int n)
+int BMM1(int a, int b)
 {
-    int s = 1;
-    int i;
-    for (i = 1; i <= n; i++)
-        s = s * i;
-    return s;
+    int c;
+    while(b!=0){
+        c = a;
+        a = b;
+        b = c % a;
+    }
+    return a;
 }
 
-int f2(int n)
-{
-
-    if (n == 0)
-        return 1;
-    else
-        return n * f2(n - 1);
+int BMM2(int a , int b){
+    
 }
